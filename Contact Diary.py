@@ -5,31 +5,34 @@ for i in contact:
     numberlist.append(contact[i])
 
 def main():
-    print()
-    Y=input("Command Key: ")
-    print()
-    if Y=="Y" or Y=="y" :
+    
+    Y=input("\nCommand Key: ").upper() 
+   
+    if Y=="Y" :
         addingcontact()
-    elif Y=="U" or Y=="u":
+    elif Y=="U":
         update()
-    elif Y=="F" or Y=="f":
+    elif Y=="F":
         search()
-    elif Y=="V" or Y=="v":
+    elif Y=="V":
         showing()
-    elif Y=="C" or Y=="c":
+    elif Y=="V":
         commandkey()
         main()
-    elif Y=="X" or Y=="x":
+    elif Y=="X":
         main()
-    elif Y=="D" or Y=="d":
+    elif Y=="D":
         delete()
+    elif Y=="EXIT":
+        exit()
     else:
-        print()
-        print("! Invalid Input !")
-        print()
-        print("Enter command key again.")
+        
+        print("\n! Invalid Input !")
+       
+        print("\nEnter command key again.")
         
         main()
+    
 
     
 def addingcontact():
@@ -44,22 +47,22 @@ def addingcontact():
                     data2=int(data6)
                     if len(str(data6))!=10:
                         reenter()
-                    elif data6=="X":
+                    elif data6.upper()=="x":
                         main()
                 reenter()
     if data1 not in contact:
         contact[data1]=data2
         
     elif data1 in contact:
-        print()
-        print("This name already exist.")
-        print()
-        print("To update the existing contact, Key:'U'")
-        print()
-        print("To change name entered, Key:'N'")
-        print()
-        condition=input("Key: ")
-        if condition=="U" or condition=="u":
+        
+        print("\nThis name already exist.")
+        
+        print("\nTo update the existing contact, Key:'U'")
+        
+        print("\nTo change name entered, Key:'N'")
+        
+        condition=input("Key: ").upper()
+        if condition=="U":
             
             contact[data1]=data2
         elif condition=="N":
@@ -73,7 +76,7 @@ def addingcontact():
                     contact[data3]=int(data6)
                     if len(str(data6))!=10:
                         reenter()
-                    elif data6=="X":
+                    elif data6.lower()=="x":
                         main()
                 reenter()
             else:
